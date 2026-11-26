@@ -1,0 +1,6 @@
+{
+  "name": "Apotheca — Clinical Therapeutics",
+  "description": "A calm, scientifically rich clinical pharmacology and therapeutics strategy game for pharmacy students.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

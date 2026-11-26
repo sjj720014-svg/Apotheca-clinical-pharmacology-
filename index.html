@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apotheca — Clinical Therapeutics Game</title>
+    <meta
+      name="description"
+      content="A calm, scientifically rich clinical pharmacology and therapeutics strategy game for pharmacy students."
+    />
+    <meta name="theme-color" content="#0B1B19" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Apotheca" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <meta property="og:title" content="Apotheca — Clinical Therapeutics Game" />
+    <meta
+      property="og:description"
+      content="A calm, scientifically rich clinical pharmacology and therapeutics strategy game for pharmacy students."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('apotheca_theme_v1');
+          var themeColors = {
+            botanical: '#0B1B19',
+            cardiology: '#07111F',
+            obsidian: '#111216',
+            plum: '#140E1D',
+            daylight: '#EDF2F0',
+            parchment: '#F3EFE6'
+          };
+          var active = (t && themeColors[t]) ? t : 'botanical';
+          document.documentElement.dataset.theme = active;
+          document.documentElement.style.colorScheme = (active === 'daylight' || active === 'parchment') ? 'light' : 'dark';
+          var metaTheme = document.querySelector('meta[name="theme-color"]');
+          if (metaTheme) metaTheme.setAttribute('content', themeColors[active]);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-canvas text-ink antialiased selection:bg-emerald-500/30">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
